@@ -9,7 +9,7 @@ return {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "nvim-treesitter/nvim-treesitter-refactor",
       "nvim-treesitter/nvim-treesitter-context",
-      "windwp/nvim-ts-autotag",  -- HTML/JSX auto tags
+      "windwp/nvim-ts-autotag",     -- HTML/JSX auto tags
       "nvim-treesitter/playground", -- optional (TSPlaygroundToggle)
     },
     config = function()
@@ -58,15 +58,14 @@ return {
           enable = true,
           disable = { "python" },
         },
-
         -- incremental selection
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "<Leader>ss",
-            node_incremental = "<Leader>si",
-            scope_incremental = "<Leader>sc",
-            node_decremental = "<Leader>sd",
+            init_selection = "<Leader>ns",
+            node_incremental = "<Leader>ns",
+            scope_incremental = "<Leader>nc",
+            node_decremental = "<Leader>nd",
           },
         },
 
