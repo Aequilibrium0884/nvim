@@ -22,6 +22,7 @@ return {
       python = { "ruff", "black" },
       yaml = { "prettier" },
       markdown = { "prettier" },
+      sql = { "sqlruff" },
     },
   },
 }

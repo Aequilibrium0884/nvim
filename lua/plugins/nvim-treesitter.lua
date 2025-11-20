@@ -3,7 +3,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- always use latest
+    version = '0.10.0', -- always use latest
     build = ":TSUpdate",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
