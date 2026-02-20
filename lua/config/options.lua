@@ -16,16 +16,9 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.shortmess:append("I")
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.cmd([[
-  highlight Normal       guibg=NONE ctermbg=NONE
-  highlight NormalNC     guibg=NONE ctermbg=NONE
-  highlight EndOfBuffer  guibg=NONE ctermbg=NONE
-  highlight LineNr       guibg=NONE ctermbg=NONE
-  highlight SignColumn   guibg=NONE ctermbg=NONE
-  highlight VertSplit    guibg=NONE ctermbg=NONE
-]])
+vim.opt.virtualedit = "block"
 vim.diagnostic.config({
-	virtual_text = true, -- inline errors
-	signs = true, -- gutter icons
-	update_in_insert = false, -- prevent distractions while typing
+  virtual_text = true,      -- inline errors
+  signs = true,             -- gutter icons
+  update_in_insert = false, -- prevent distractions while typing
 })

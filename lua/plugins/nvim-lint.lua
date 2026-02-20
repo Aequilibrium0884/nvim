@@ -8,7 +8,7 @@ return {
       ansible = { "ansible_lint" },
       bash = { "bash" },
       sh = { "shellcheck" }, -- shellcheck is better for generic sh
-      sql = { "sqlruff" },
+      sql = { "postgres_lsp" },
     }
 
     -- run lint on save

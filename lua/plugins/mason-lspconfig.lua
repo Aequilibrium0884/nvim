@@ -25,7 +25,7 @@ return {
         "dockerls",
         "systemd_ls",
         "docker_compose_language_service",
-        "sqlls",
+        "postgres_lsp",
       },
     })
   end,
