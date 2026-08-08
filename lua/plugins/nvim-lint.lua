@@ -6,8 +6,11 @@ return {
 
     lint.linters_by_ft = {
       ansible = { "ansible_lint" },
+      docker = { "hadolint" },
+      systemd = { "systemdlint" },
       bash = { "bash" },
-      sh = { "shellcheck" }, -- shellcheck is better for generic sh
+      sh = { "shellcheck" },
+      go = { "golangci-lint" },
       sql = { "postgres_lsp" },
     }
 
