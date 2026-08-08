@@ -28,6 +28,7 @@ return {
 				"java",
 				"markdown",
 				"markdown_inline",
+				"nginx_language_server",
 			}
 
 			vim.api.nvim_create_autocmd("FileType", {

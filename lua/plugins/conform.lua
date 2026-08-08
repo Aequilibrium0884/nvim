@@ -17,6 +17,7 @@ return {
         "goimports",
         "golines"
       },
+      nginx = { "nginx-config-formatter" },
       sh = { "shfmt" },
       bash = { "shfmt" },
       python = { "ruff", "black" },
