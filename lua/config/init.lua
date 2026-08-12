@@ -10,8 +10,3 @@ if ok then
   vim.notify = notify
 end
 
-vim.api.nvim_create_user_command(
-  'Wsudo',
-  'write !sudo tee % > /dev/null',
-  {}
-)

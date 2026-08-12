@@ -1,29 +1,35 @@
 return {
-  'stevearc/conform.nvim',
-  opts = {
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_fallback = true
-    },
-    formatters_by_ft = {
-      lua = { "stylua" },
-      javascript = { "prettier" },
-      typescript = { "prettier" },
-      json = { "prettier" },
-      html = { "prettier" },
-      css = { "prettier" },
-      go = {
-        "gofumpt",
-        "goimports",
-        "golines"
-      },
-      nginx = { "nginx-config-formatter" },
-      sh = { "shfmt" },
-      bash = { "shfmt" },
-      python = { "ruff", "black" },
-      yaml = { "prettier" },
-      markdown = { "prettier" },
-      sql = { "pgformatter" },
-    },
-  },
+
+	"stevearc/conform.nvim",
+	opts = {
+		format_on_save = {
+			timeout_ms = 500,
+			lsp_fallback = true,
+		},
+
+		formatters_by_ft = {
+			lua = { "stylua" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			json = { "prettier", "jq" },
+			html = { "prettier" },
+			css = { "prettier" },
+			nginx = { "nginx-config-formatter" },
+			sh = { "shfmt" },
+			bash = { "shfmt" },
+			python = { "ruff", "black" },
+			yaml = { "prettier" },
+			markdown = { "prettier" },
+			docker = { "dockerfmt" },
+			sql = { "pgformatter", "sqlfmt" },
+			go = {
+				"gotests",
+				"gomodifytags",
+				"goimports-reviser",
+				"goimports",
+				"gofumpt",
+				"golines",
+			},
+		},
+	},
 }

@@ -1,0 +1,5 @@
+require("mini.pairs").setup({})
+require("mini.indentscope").setup({})
+require("mini.surround").setup({})
+require("mini.ai").setup({})
+require("mini.trailspace").setup({})

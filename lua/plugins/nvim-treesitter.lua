@@ -1,42 +1,51 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
-		build = ":TSUpdate",
-
-		config = function()
-			local ts = require("nvim-treesitter")
-
-			ts.setup({
-				install_dir = vim.fn.stdpath("data") .. "/site",
-			})
-
-			local parsers = {
-				"bash",
-				"c",
-				"cpp",
-				"lua",
-				"python",
-				"javascript",
-				"typescript",
-				"html",
-				"css",
-				"json",
-				"vimdoc",
-				"go",
-				"rust",
-				"java",
-				"markdown",
-				"markdown_inline",
-				"nginx_language_server",
-			}
-
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = parsers,
-				callback = function()
-					vim.treesitter.start()
-				end,
-			})
-		end,
-	},
+	"nvim-treesitter/nvim-treesitter",
+	"windwp/nvim-ts-autotag",
+	branch = "main",
+	config = function()
+		local ts = require("nvim-treesitter")
+		ts.setup({
+			install_dir = vim.fn.stdpath("data") .. "/site",
+		})
+		ts.install({
+			"bash",
+			"java",
+			"javascript",
+			"lua",
+			"go",
+			"python",
+			"typescript",
+			"html",
+			"css",
+			"json",
+			"vimdoc",
+			"ini",
+			"ssh_config",
+			"passwd",
+			"diff",
+			"regex",
+			"yaml",
+			"json",
+			"json5",
+			"toml",
+			"xml",
+			"csv",
+			"dockerfile",
+			"terraform",
+			"hcl",
+			"sql",
+			"git_config",
+			"git_rebase",
+			"gitcommit",
+			"gitignore",
+			"gitattributes",
+		})
+		require("nvim-ts-autotag").setup({
+			opts = {
+				enable_close = true,
+				enable_rename = true,
+				enable_close_on_slash = false,
+			},
+		})
+	end,
 }
