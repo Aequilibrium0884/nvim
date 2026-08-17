@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/user"
 	"path"
+	"strconv"
 )
 
 var (
@@ -16,7 +17,6 @@ var (
 	ripGrepInstalled bool
 	npmInstalled     bool
 	cargoInstalled   bool
-	userName         string
 )
 
 var (
@@ -35,6 +35,25 @@ var (
 var EffectedUser *user.User
 
 func main() {
+	err := getUser()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	pf := NewPathFiles(
+		"james",
+		"non-james",
+	)
+
+	err = pf.Prepare()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = pf.CheckFilePermissions()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func getUser() error {
@@ -48,6 +67,18 @@ func getUser() error {
 		log.Fatal(err)
 	}
 
+	uuid, err := strconv.ParseUint(EffectedUser.Uid, 10, 32)
+	if err != nil {
+		return err
+	}
+
+	gid, err := strconv.ParseUint(EffectedUser.Gid, 10, 32)
+	if err != nil {
+		return err
+	}
+
+	EffectedUserUID = uint32(uuid)
+	EffectedUserGID = uint32(gid)
 	return nil
 }
 
