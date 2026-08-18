@@ -29,6 +29,7 @@ func (pf *PathFiles) EnsureOwnership(key string, de fs.DirEntry) error {
 	if err != nil {
 		return err
 	}
+
 	stat, success := info.Sys().(*syscall.Stat_t)
 	if !success {
 		return errors.New("Value")
