@@ -2,11 +2,15 @@ require("config.keymaps")
 require("config.options")
 require("config.lazy")
 
-local ok, notify = pcall(require, "notify")
-if ok then
-  notify.setup({
-    background_colour = "#000000", -- black background (or any RGB hex)
-  })
-  vim.notify = notify
-end
-
+vim.g.clipboard = {
+	name = "OSC 52",
+	copy = {
+		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+		["*"] = require("vim.ui.clipboard.osc52").copy("+"),
+	},
+	paste = {
+		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+		["*"] = require("vim.ui.clipboard.osc52").paste("+"),
+	},
+}
+vim.opt.clipboard = "unnamedplus"

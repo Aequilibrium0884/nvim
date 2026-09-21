@@ -1,3 +1,3 @@
-module github.com/aequilibrium0884/nvim-installer
+module nvim_outfitter
 
-go 1.26.5
+go 1.26.7
