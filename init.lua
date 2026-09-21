@@ -58,3 +58,4 @@ do
 
 	vim.lsp.enable("systemd_lsp")
 end
+vim.lsp.enable("systemd_lsp")
